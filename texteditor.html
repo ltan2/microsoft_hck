@@ -1,0 +1,50 @@
+<html>
+
+<style>
+    html {
+  font-family: "Helevetica", sans-serif;
+}
+
+body {
+  color: #333;
+  font-weight: 100;
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+div:focus {
+  outline: none;
+}
+
+#heading {
+  font-size: 30px;
+  padding-top: 30px;
+}
+
+#content {
+  padding-top: 10px;
+  font-size: 24px;
+}
+
+.box{
+border-style: solid;
+height : 80%
+}
+</style>
+
+  <head>
+    <title>Text Editor</title>
+      <h1>Type your story</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+<div class = "box">
+  <form action = "link">
+  <div id="heading" contenteditable="true"></div>
+  <div id="content" contenteditable="true"></div>
+    </div>
+    <input type = "submit" value = "submit" height = "500px">
+  </form>
+
+  <script src="app.js"></script>
+</html>
