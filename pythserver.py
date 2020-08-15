@@ -18,6 +18,9 @@ class HandleRequests(http.server.SimpleHTTPRequestHandler):
         story_dir = Path('../story')
         story_dir.mkdir(parents=True, exist_ok=True)
 
+        story_file = (story_dir / 'story').with_suffix('.txt')
+        story_file = str(story_file)
+
         if 'input' in query_components:
             data_list = query_components['input'][0].split(',')
             print(data_list[0])
@@ -26,9 +29,6 @@ class HandleRequests(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(success.encode())
 
         elif 'story' in query_components:
-            story_file = (story_dir/'story').with_suffix('.txt')
-            story_file = str(story_file)
-
             print(query_components['story'][0])
 
             if not path.exists(story_file):
@@ -39,6 +39,18 @@ class HandleRequests(http.server.SimpleHTTPRequestHandler):
                 with open(story_file, 'a') as f:
                     f.write(str(query_components['story'][0]))
                     f.close()
+
+        elif 'publish' in query_components:
+            if not path.exists(story_file):
+                status = "No stories published yet"
+                self.wfile.write(status.encode())
+            else:
+                story = ""
+                with open(story_file, 'r') as f:
+                    contents = f.read()
+                    story = story + contents
+                    f.close()
+                self.wfile.write(story.encode())
 
         return
 
