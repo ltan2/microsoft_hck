@@ -1,4 +1,5 @@
 import http.server
+from pathlib import Path
 from os import path
 from urllib.parse import urlparse
 from urllib.parse import parse_qs
@@ -13,13 +14,35 @@ class HandleRequests(http.server.SimpleHTTPRequestHandler):
     def do_POST(self):
         self._set_headers()
         query_components = parse_qs(urlparse(self.path).query)
+
+        story_dir = Path('../story')
+        story_dir.mkdir(parents=True, exist_ok=True)
+
         if 'input' in query_components:
             data_list = query_components['input'][0].split(',')
             print(data_list[0])
             print(data_list[1])
-        success = "yes"
-        self.wfile.write(success.encode())
+            success = "yes"
+            self.wfile.write(success.encode())
+
+        elif 'story' in query_components:
+            story_file = (story_dir/'story').with_suffix('.txt')
+            story_file = str(story_file)
+
+            print(query_components['story'][0])
+
+            if not path.exists(story_file):
+                with open(story_file, 'w') as f:
+                    f.write(str(query_components['story'][0]))
+                    f.close()
+            else:
+                with open(story_file, 'a') as f:
+                    f.write(str(query_components['story'][0]))
+                    f.close()
+
         return
+
+
 
     def do_PUT(self):
         self.do_POST()
@@ -32,5 +55,7 @@ class HandleRequests(http.server.SimpleHTTPRequestHandler):
 
 host = 'localhost'
 port = 443
+print(f'Listening at port {port}...')
 HTTPServer((host, port), HandleRequests).serve_forever()
+
 
