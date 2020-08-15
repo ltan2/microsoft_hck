@@ -1,3 +1,7 @@
+body{
+background: url("bck.jpg");
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -34,4 +38,22 @@ li a:hover:not(.active) {
 
 .About{
 text-align: center;
+}
+
+.book{
+padding : 10px;
+line-height :1.6;
+background-color: #FFEBCD;
+}
+
+.steps{
+padding : 10px;
+line-height: 1.6;
+background-color:#F0E68C;
+}
+
+.impact{
+padding :10px;
+line-height : 1.6;
+background-color:#FFE4E1;
 }
