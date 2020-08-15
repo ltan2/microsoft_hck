@@ -1,0 +1,71 @@
+<html>
+<style>
+        label{
+        padding: 5px;
+        font-size: 20px;
+        }
+        input{
+        padding: 5px;
+        height : 25px;
+        }
+        .edu{
+        padding : 5px;
+        background-color: #F5DBE3;
+        }
+</style>
+
+<h1>Write for Africa</h1>
+ <link rel="stylesheet" href="style.css">
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="works.html">How it works</a></li>
+  <li><a href = "register.html">Register</a></li>
+  <li><a href="volunteer.html">Volunteer login</a></li>
+  <li><a href="educators.html">Educators login</a></li>
+  <li><a href="#about">Gallery</a></li>
+
+</ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+function checkBox(){
+document.getElementById("s").innerHTML = 5 + 6;
+          var x = document.getElementById("edu").checked;
+           window.location = "https://www.geeksforgeeks.org";
+          var y = document.getElementById("vol").checked;
+          if(x == 1){
+            window.location = "educators.html";
+            }
+          if(y == 1){
+            window.location = "volunteers.html";
+            }
+        }
+}
+
+</script>
+<h1>Register as:</h1>
+<form action = "javascript:checkBox()">
+            <label for=""><b>Username</b></label>
+            <br><input type="text" placeholder="Enter Email" name="email" id="email" required>
+            <br><br>
+            <label for="psw"><b>Password</b></label>
+            <br><input type="password" placeholder="Enter Password" name="email" id="password" required>
+            <br><br>
+            <label for=""><b>Organization name</b></label>
+            <br><input type="text" placeholder="Enter Organization" name="org" id="org" required>
+            <br><br>
+            <label for="psw"><b>Location</b></label>
+            <br><input type="text" placeholder="Enter Location" name="location" id="loc" required>
+            <br><br>
+            Select one that suits your category <br>
+             <input type="checkbox" id="edu" name="edu" class = "checked">
+            <label for="educator">Educator</label><br><br>
+
+            <input type="checkbox" id="vol" name="Volunteer" class = "checked">
+            <label for="volunteer">Volunteer</label><br>
+            <!--<button type="submit" onclick ="signinbtn">Sign In</button>-->
+            <button id = "s" onclick = checkBox()>Submit</button>
+            </form>
+ <script src="write.js"></script>
+</html>
