@@ -14,9 +14,19 @@ Description: This file handles the page for displaying stories written by the ed
   <li><a href="educators.html">Educators login</a></li>
   <li><a href="gallery.html">Gallery</a></li>
 </ul>
+<style>
+    .publish{
+    width = 400px;
+    padding : 15px;
+    font-size : 20px;
+    border-style:solid;
+    }
+</style>
 <h1>Stories</h1>
-<br><div id="publishstory"></div>
-
+<div class = "publish">
+<img src = "display.jpg" alt = "book" height = "100" width = "100" float: left>
+<div id="publishstory"></div>
+</div>
 <script>
   var publish = "publish";
   var queryString = (publish != null || publish != "") ? "?publish=" + publish: "";
