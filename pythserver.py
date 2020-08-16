@@ -1,3 +1,6 @@
+#file name: pythserver.py
+#Description: Python script that handles the POST and GET request from web app
+
 import http.server
 from pathlib import Path
 from os import path
