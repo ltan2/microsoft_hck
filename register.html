@@ -12,6 +12,10 @@
         padding : 5px;
         background-color: #F5DBE3;
         }
+        .forms{
+        position: absolute;
+       
+    }
 </style>
 
 <h1>Write for Africa</h1>
@@ -29,18 +33,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <h1>Register as:</h1>
+<div class = "forms">
 <form action = "javascript:checkBox()">
-            <label for=""><b>Username</b></label>
-            <br><input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <label for=""><b>Username &nbsp;</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
             <br><br>
-            <label for="psw"><b>Password</b></label>
-            <br><input type="password" placeholder="Enter Password" name="email" id="password" required>
+    <label for="psw"><b>Password &nbsp;</b></label>
+            <input type="password" placeholder="Enter Password" name="email" id="password" required>
             <br><br>
-            <label for=""><b>Organization name</b></label>
-            <br><input type="text" placeholder="Enter Organization" name="org" id="org" required>
+    <label for=""><b>Organization name &nbsp;</b></label>
+            <input type="text" placeholder="Enter Organization" name="org" id="org" required>
             <br><br>
-            <label for="psw"><b>Location</b></label>
-            <br><input type="text" placeholder="Enter Location" name="location" id="loc" required>
+    <label for="psw"><b>Location &nbsp;</b></label>
+            <input type="text" placeholder="Enter Location" name="location" id="loc" required>
             <br><br>
             Select one that suits your category <br>
              <input type="checkbox" id="edu" name="edu" class = "checked">
@@ -51,7 +56,7 @@
             <!--<button type="submit" onclick ="signinbtn">Sign In</button>-->
             <button id = "s" onclick = checkBox()>Submit</button>
             </form>
-
+</div>
 <script>
 function checkBox(){
           var x = document.getElementById("edu").checked;
